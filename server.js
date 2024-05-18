@@ -1,10 +1,19 @@
 const http = require("http");
 const fs = require("fs");
+const _ = require("lodash");
 
 //creating http you can assign const too
 const server = http.createServer((req, res) => {
+  //Using Lodash
+  const num = _.random(0, 20);
+  console.log(num);
+  const greet = _.once(() => {
+    console.log("hello");
+  });
+  greet();
+  greet();
   //   console.log("request made");
-  console.log(req.url, req.method); //request object in console
+  // console.log(req.url, req.method); //request object in console
 
   //we can use response header to do stuffs like set cookies
 
